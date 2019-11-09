@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02C333BFEB0F1FA06D310EB6 /* Pods_crime_Aid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866F9BE7CEB4EFC6C556337E /* Pods_crime_Aid.framework */; };
+		E5AF0A6F23771A2100D3B64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF0A6E23771A2100D3B64A /* AppDelegate.swift */; };
+		E5AF0A7123771A2100D3B64A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF0A7023771A2100D3B64A /* SceneDelegate.swift */; };
+		E5AF0A7323771A2100D3B64A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF0A7223771A2100D3B64A /* LoginViewController.swift */; };
+		E5AF0A7823771A2300D3B64A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AF0A7723771A2300D3B64A /* Assets.xcassets */; };
+		E5AF0A7B23771A2300D3B64A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AF0A7923771A2300D3B64A /* LaunchScreen.storyboard */; };
+		E5B44D9223774AFE00070582 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B44D9123774AFE00070582 /* ColorExtension.swift */; };
+		E5E6231023775424002D74E8 /* TextUnderline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6230F23775424002D74E8 /* TextUnderline.swift */; };
+		E5E6231223775558002D74E8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6231123775558002D74E8 /* HomeViewController.swift */; };
+		E5E6231523775D26002D74E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5AF0A7C23771A2300D3B64A /* Info.plist */; };
+		E5E6231723775E9B002D74E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5E6231323775CE5002D74E8 /* GoogleService-Info.plist */; };
+		E5E62319237761BC002D74E8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E62318237761BC002D74E8 /* RegisterViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D6F4F30BB8D48EFCEBD979E /* Pods-crime Aid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crime Aid.release.xcconfig"; path = "Target Support Files/Pods-crime Aid/Pods-crime Aid.release.xcconfig"; sourceTree = "<group>"; };
+		866F9BE7CEB4EFC6C556337E /* Pods_crime_Aid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crime_Aid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C301AF98A4858D9293117DFF /* Pods-crime Aid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crime Aid.debug.xcconfig"; path = "Target Support Files/Pods-crime Aid/Pods-crime Aid.debug.xcconfig"; sourceTree = "<group>"; };
+		E5AF0A6B23771A2100D3B64A /* crime Aid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crime Aid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5AF0A6E23771A2100D3B64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5AF0A7023771A2100D3B64A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E5AF0A7223771A2100D3B64A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E5AF0A7723771A2300D3B64A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5AF0A7A23771A2300D3B64A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5AF0A7C23771A2300D3B64A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5B44D9123774AFE00070582 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		E5E6230F23775424002D74E8 /* TextUnderline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUnderline.swift; sourceTree = "<group>"; };
+		E5E6231123775558002D74E8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E5E6231323775CE5002D74E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5E62318237761BC002D74E8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5AF0A6823771A2100D3B64A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02C333BFEB0F1FA06D310EB6 /* Pods_crime_Aid.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		82554667C759ABB441003C32 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C301AF98A4858D9293117DFF /* Pods-crime Aid.debug.xcconfig */,
+				0D6F4F30BB8D48EFCEBD979E /* Pods-crime Aid.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E5AF0A6223771A2100D3B64A = {
+			isa = PBXGroup;
+			children = (
+				E5AF0A6D23771A2100D3B64A /* crime Aid */,
+				E5AF0A6C23771A2100D3B64A /* Products */,
+				82554667C759ABB441003C32 /* Pods */,
+				E7590094A6FBDE61BEC6B07F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E5AF0A6C23771A2100D3B64A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF0A6B23771A2100D3B64A /* crime Aid.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5AF0A6D23771A2100D3B64A /* crime Aid */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF0A6E23771A2100D3B64A /* AppDelegate.swift */,
+				E5B44D9123774AFE00070582 /* ColorExtension.swift */,
+				E5AF0A7023771A2100D3B64A /* SceneDelegate.swift */,
+				E5AF0A7223771A2100D3B64A /* LoginViewController.swift */,
+				E5E6231123775558002D74E8 /* HomeViewController.swift */,
+				E5E6230F23775424002D74E8 /* TextUnderline.swift */,
+				E5AF0A7723771A2300D3B64A /* Assets.xcassets */,
+				E5AF0A7923771A2300D3B64A /* LaunchScreen.storyboard */,
+				E5E6231323775CE5002D74E8 /* GoogleService-Info.plist */,
+				E5AF0A7C23771A2300D3B64A /* Info.plist */,
+				E5E62318237761BC002D74E8 /* RegisterViewController.swift */,
+			);
+			path = "crime Aid";
+			sourceTree = "<group>";
+		};
+		E7590094A6FBDE61BEC6B07F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				866F9BE7CEB4EFC6C556337E /* Pods_crime_Aid.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5AF0A6A23771A2100D3B64A /* crime Aid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5AF0A7F23771A2300D3B64A /* Build configuration list for PBXNativeTarget "crime Aid" */;
+			buildPhases = (
+				3FDE9B9CCE9E7060CB3E1D63 /* [CP] Check Pods Manifest.lock */,
+				E5AF0A6723771A2100D3B64A /* Sources */,
+				E5AF0A6823771A2100D3B64A /* Frameworks */,
+				E5AF0A6923771A2100D3B64A /* Resources */,
+				0AADA8774E49774521978FD7 /* [CP] Copy Pods Resources */,
+				EB78E71CCEF198EA3F051A3B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "crime Aid";
+			productName = "crime Aid";
+			productReference = E5AF0A6B23771A2100D3B64A /* crime Aid.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5AF0A6323771A2100D3B64A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Cassy;
+				TargetAttributes = {
+					E5AF0A6A23771A2100D3B64A = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = E5AF0A6623771A2100D3B64A /* Build configuration list for PBXProject "crime Aid" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E5AF0A6223771A2100D3B64A;
+			productRefGroup = E5AF0A6C23771A2100D3B64A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5AF0A6A23771A2100D3B64A /* crime Aid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5AF0A6923771A2100D3B64A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5E6231723775E9B002D74E8 /* GoogleService-Info.plist in Resources */,
+				E5E6231523775D26002D74E8 /* Info.plist in Resources */,
+				E5AF0A7B23771A2300D3B64A /* LaunchScreen.storyboard in Resources */,
+				E5AF0A7823771A2300D3B64A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AADA8774E49774521978FD7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crime Aid/Pods-crime Aid-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crime Aid/Pods-crime Aid-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-crime Aid/Pods-crime Aid-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FDE9B9CCE9E7060CB3E1D63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-crime Aid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB78E71CCEF198EA3F051A3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crime Aid/Pods-crime Aid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crime Aid/Pods-crime Aid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-crime Aid/Pods-crime Aid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5AF0A6723771A2100D3B64A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5AF0A7323771A2100D3B64A /* LoginViewController.swift in Sources */,
+				E5AF0A6F23771A2100D3B64A /* AppDelegate.swift in Sources */,
+				E5E62319237761BC002D74E8 /* RegisterViewController.swift in Sources */,
+				E5E6231023775424002D74E8 /* TextUnderline.swift in Sources */,
+				E5AF0A7123771A2100D3B64A /* SceneDelegate.swift in Sources */,
+				E5E6231223775558002D74E8 /* HomeViewController.swift in Sources */,
+				E5B44D9223774AFE00070582 /* ColorExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E5AF0A7923771A2300D3B64A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5AF0A7A23771A2300D3B64A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E5AF0A7D23771A2300D3B64A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E5AF0A7E23771A2300D3B64A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5AF0A8023771A2300D3B64A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C301AF98A4858D9293117DFF /* Pods-crime Aid.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BCWSWZ6MT5;
+				INFOPLIST_FILE = "crime Aid/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cassandrabalbuena.crime-Aid";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E5AF0A8123771A2300D3B64A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D6F4F30BB8D48EFCEBD979E /* Pods-crime Aid.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BCWSWZ6MT5;
+				INFOPLIST_FILE = "crime Aid/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cassandrabalbuena.crime-Aid";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5AF0A6623771A2100D3B64A /* Build configuration list for PBXProject "crime Aid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5AF0A7D23771A2300D3B64A /* Debug */,
+				E5AF0A7E23771A2300D3B64A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5AF0A7F23771A2300D3B64A /* Build configuration list for PBXNativeTarget "crime Aid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5AF0A8023771A2300D3B64A /* Debug */,
+				E5AF0A8123771A2300D3B64A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5AF0A6323771A2100D3B64A /* Project object */;
+}

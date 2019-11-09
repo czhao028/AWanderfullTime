@@ -1,0 +1,6 @@
+framework module Pods_crime_Aid {
+  umbrella header "Pods-crime Aid-umbrella.h"
+
+  export *
+  module * { export * }
+}
