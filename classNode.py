@@ -7,7 +7,6 @@ class Node:
         self.routes = kwargs["Routes"]
         self.stopID = kwargs["StopID"]
         self.safety = 0
-        self.children = []
         self.parent = None
         self.h = -1 * float("inf")
         self.g = -1 * float("inf")
@@ -19,8 +18,11 @@ class Node:
     def set_safety(self, score):
         self.safety = score
 
-    def set_child(self, node_child):
-        self.children.append(node_child)
+    def update_safety(self, score):
+        self.safety = (self.safety + score) / 2
+
+    # def set_child(self, node_child):
+    #     self.children.append(node_child)
     def set_parent(self, node_parent):
         self.parent = node_parent
 

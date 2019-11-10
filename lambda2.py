@@ -1,6 +1,8 @@
 import requests
 from collections import defaultdict
 import time
+import numpy as np
+from sklearn.cluster import KMeans
 #url = "https://api.wmata.com/Bus.svc/json/jBusPositions[?RouteID][&Lat][&Lon][&Radius]"
 regular_url = "https://api.wmata.com/Bus.svc/json/"
 #url = "https://api.wmata.com/Bus.svc/json/jBusPositions"
@@ -9,7 +11,7 @@ regular_url = "https://api.wmata.com/Bus.svc/json/"
 headers= {"api_key":"a00bebb0819a42deae5c457f06b7c1f4"}
 #response = requests.get(url=url, params=params, headers=headers)
 #print(response.json())
-from .classNode import Node
+from classNode import Node
 from geopy.distance import vincenty
 import dill as pk
 
@@ -36,6 +38,7 @@ def stops_radius(**kwargs):
             params["Radius"] = kwargs["Radius"]
         url = regular_url + "jStops"
         response = requests.get(url=url, params=params, headers=headers)
+        print(response.json())
         return response.json()
     except:
         raise Exception("Invalid keyword arguments for stops_radius!")
@@ -52,7 +55,7 @@ def get_all_paths():
     return requests.get(url=url, headers=headers).json()
 
 def create_nodes():
-    nodes_dict = defaultdict(lambda: defaultdict(int))
+    nodes_dict = defaultdict(int)
     parent_dict = defaultdict(lambda: defaultdict(int))
     for path in get_all_paths()["Routes"]:
         path_detail = path_details(path["RouteID"])
@@ -63,7 +66,7 @@ def create_nodes():
                 nodes_dict[stop["StopID"]] = newNode
                 if prev != None:
                     parent_dict[prev.stopID][newNode.stopID] = vincenty((prev.lat, prev.lon), (newNode.lat, newNode.lon))
-                    prev.set_child(newNode)
+                    #prev.set_child(newNode)
                 prev = newNode
         except:
             print("Exception" + str(path_detail))
@@ -76,7 +79,7 @@ def create_nodes():
                 nodes_dict[stop["StopID"]] = newNode
                 if prev != None:
                     parent_dict[prev.stopID][newNode.stopID] = vincenty((prev.lat, prev.lon), (newNode.lat, newNode.lon))
-                    prev.set_child(newNode)
+                    #prev.set_child(newNode)
                 prev = newNode
         except:
             print("Exception" + str(path_detail))
@@ -91,6 +94,17 @@ def create_nodes():
     with open("parentstops.pk", "wb") as file:
         pk.dump(parent_dict, file)
 
+    with open("crime.pk", "rb") as file:
+        xl = pk.load(file)
+    x1 = xl[xl["year"] == 2017]
+    X = xl.as_matrix(columns=['YBLOCK', 'XBLOCK'])
+    dbscan = KMeans(n_clusters=8, random_state=0).fit(X)
+    for latitude, longitude in dbscan.cluster_centers_:
+        stops = stops_radius(**{"Lat": latitude, "Lon": longitude, "Radius": 5000})["Stops"]
+        for stop in stops:
+            update_node = nodes_dict[stop["StopID"]]
+            if type(update_node) != int:
+                update_node.update_safety(vincenty((latitude, longitude), (update_node.lat, update_node.lon))/5)
 
 if __name__ == "__main__":
     create_nodes()
