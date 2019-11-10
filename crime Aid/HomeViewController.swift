@@ -13,7 +13,7 @@ import GoogleMaps
 import GooglePlaces
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, GMSAutocompleteResultsViewControllerDelegate {
-    
+    var topPlaces = TopPlacesViewController()
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var mapView: GMSMapView!
@@ -25,6 +25,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     let filter = GMSAutocompleteFilter()
     var hours = -1
     var selectPlacesButton = UIButton()
+    var path = GMSMutablePath()
+    var pathCoordinates : [(CLLocationDegrees, CLLocationDegrees)] = [(38.8898214, -77.0074088), (38.8976763, -77.0365298), (38.8892686, -77.050176), (38.8894838, -77.0352791), (38.8912933, -77.04771319999999), (38.88816010000001, -77.0198679), (38.891298, -77.019965), (38.8912662, -77.0260654), (38.9296156, -77.0497844), (38.89127930000001, -77.03005089999999), (38.88138060000001, -77.0364536), (38.8783252, -77.068671), (38.8930396, -77.0192849), (38.8838607, -77.0254573), (38.8910644, -77.032614), (38.9305946, -77.0707808), (38.9097057, -77.06535650000001)]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +64,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         searchController?.searchResultsUpdater = resultViewController
         let subView = UIView(frame: CGRect(x: 0, y: 65.0, width: 350.0, height: 45.0))
 
-        //let margins = self.view.layoutMarginsGuide
         selectPlacesButton = UIButton(frame: .zero)
         selectPlacesButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(selectPlacesButton)
@@ -84,6 +85,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         searchController?.searchBar.sizeToFit()
         searchController?.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
+        
+        drawPath()
+        //mapView.clear()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,7 +118,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                 let firstTextField = hourAlert.textFields![0] as UITextField
                 guard let hour = firstTextField.text else { return }
                 self.store(hour)
-                print("Hours in closure: \(self.hours)")
             })
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { alert -> Void in
@@ -137,8 +140,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     }
     
     @IBAction func plusPressed(_ sender: UIButton){
-        let topPlaces = TopPlacesViewController()
         topPlaces.modalPresentationStyle = .overFullScreen
         show(topPlaces, sender: self)
+        topPlaces.completionHandler = { Array in
+            return Array
+        }
+    }
+    
+    func drawPath(){
+        for coordinates in pathCoordinates{
+            path.addLatitude(coordinates.0, longitude: coordinates.1)
+        }
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeColor = .lavender
+        polyline.strokeWidth = 10.0
+        polyline.geodesic = true
+        polyline.map = mapView
     }
 }
