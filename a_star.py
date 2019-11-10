@@ -2,6 +2,7 @@ import dill as pk
 from lambda2 import *
 import heapq
 from geopy.distance import vincenty
+import csv
 
 from collections import Counter
 
@@ -16,6 +17,7 @@ with open("allstops.pk", "rb") as nodes_file:
     nodes_dict = pk.load(nodes_file)
 with open("parentstops.pk", "rb") as edges_file:
     edges_dict = pk.load(edges_file)
+
 def a_star(start_coords, end_coords, radius):
     starty, startx = start_coords
     endy, endx = end_coords
@@ -138,6 +140,25 @@ a = (38.888871, -77.003902)
 b = (38.888956, -76.972548)
 
 y, x = routes_common(a, b, (vincenty(a,b).km)*1000/2)
+
+with open("firebase.csv", "w") as c:
+    csvwriter = csv.writer(c)
+    with open('locations.csv', "r") as loca:
+        csvwriter.write(["location1", "location2", "lats", "longs"])
+        cwriter_location = csv.reader(loca)
+        point_dict = defaultdict(tuple)
+        for row in cwriter_location:
+            lat, lon, location = row
+            point_dict[location] = (lat, lon)
+        rows = []
+        for key, val in point_dict.items():
+            for k, v in point_dict.items():
+                if k != key:
+                    lats, longs = routes_common(val, v, (vincenty(val,v).km)*1000/2)
+                    rows.append([key, k, lats, longs])
+        csvwriter.writerows(rows)
+
+
 # print((vincenty(a,b).km)*1000)
 # end_node = a_star(a,b, (vincenty(a,b).km)*1000/2)
 
