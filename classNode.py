@@ -19,7 +19,7 @@ class Node:
         self.safety = score
 
     def update_safety(self, score):
-        self.safety = (self.safety + score) / 2
+        self.safety = ((self.safety + score) / 2)/4
 
     # def set_child(self, node_child):
     #     self.children.append(node_child)

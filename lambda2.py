@@ -14,7 +14,7 @@ headers= {"api_key":"a00bebb0819a42deae5c457f06b7c1f4"}
 from classNode import Node
 from geopy.distance import vincenty
 import dill as pk
-
+import pickle
 
 def buses_radius(**kwargs):
     try:
@@ -89,22 +89,28 @@ def create_nodes():
         # try:
         # print(path_detail)
         time.sleep(0.1)
-    with open("allstops.pk", "wb") as file:
-        pk.dump(nodes_dict, file)
-    with open("parentstops.pk", "wb") as file:
-        pk.dump(parent_dict, file)
 
-    with open("crime.pk", "rb") as file:
-        xl = pk.load(file)
-    x1 = xl[xl["year"] == 2017]
-    X = xl.as_matrix(columns=['YBLOCK', 'XBLOCK'])
-    dbscan = KMeans(n_clusters=8, random_state=0).fit(X)
-    for latitude, longitude in dbscan.cluster_centers_:
-        stops = stops_radius(**{"Lat": latitude, "Lon": longitude, "Radius": 5000})["Stops"]
-        for stop in stops:
-            update_node = nodes_dict[stop["StopID"]]
-            if type(update_node) != int:
-                update_node.update_safety(vincenty((latitude, longitude), (update_node.lat, update_node.lon))/5)
+
+
 
 if __name__ == "__main__":
-    create_nodes()
+    #create_nodes()
+    with open("allstops.pk", "rb") as nodes_file:
+        nodes_dict = pk.load(nodes_file)
+    with open("crime.pk", "rb") as file:
+        xl = pickle.load(file)
+        xl = xl[xl["year"] == 2017]
+        xl.dropna()
+        X = xl.as_matrix(columns=['YBLOCK', 'XBLOCK'])
+        dbscan = KMeans(n_clusters=8, random_state=0).fit(X)
+        for latitude, longitude in dbscan.cluster_centers_:
+            stops = stops_radius(**{"Lat": latitude, "Lon": longitude, "Radius": 5000})["Stops"]
+            for stop in stops:
+                update_node = nodes_dict[stop["StopID"]]
+                if type(update_node) != int:
+                    update_node.update_safety(vincenty((latitude, longitude), (update_node.lat, update_node.lon)).km/5)
+        print(nodes_dict)
+        with open("allstops.pk", "wb") as file:
+            pk.dump(nodes_dict, file)
+    # with open("parentstops.pk", "wb") as file:
+    #     pk.dump(parent_dict, file)
