@@ -9,7 +9,7 @@ regular_url = "https://api.wmata.com/Bus.svc/json/"
 headers= {"api_key":"a00bebb0819a42deae5c457f06b7c1f4"}
 #response = requests.get(url=url, params=params, headers=headers)
 #print(response.json())
-from classNode import *
+from .classNode import Node
 from geopy.distance import vincenty
 import dill as pk
 
