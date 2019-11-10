@@ -94,7 +94,7 @@ def create_nodes():
 
 
 if __name__ == "__main__":
-    #create_nodes()
+    create_nodes()
     with open("allstops.pk", "rb") as nodes_file:
         nodes_dict = pk.load(nodes_file)
     with open("crime.pk", "rb") as file:
