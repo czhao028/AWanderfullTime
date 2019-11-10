@@ -71,7 +71,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                                      selectPlacesButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 160),
                                      selectPlacesButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -160)])
 
-        selectPlacesButton.backgroundColor = .lavendar
+        selectPlacesButton.backgroundColor = .lavender
         selectPlacesButton.layer.cornerRadius = 30
         selectPlacesButton.layer.masksToBounds = true
         selectPlacesButton.setTitle("+", for: .normal)

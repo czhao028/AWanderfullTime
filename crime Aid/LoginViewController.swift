@@ -111,14 +111,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             loginButton?.layer.masksToBounds = true
             loginButton?.setTitle("Login", for: .normal)
             loginButton?.setTitleColor(.white, for: .normal)
-            loginButton?.backgroundColor = .babyLavender
+            loginButton?.backgroundColor = .lavender
             loginButton?.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 35)
             loginButton?.addTarget(self, action: #selector(loginPressed(_:)), for: .touchUpInside)
             registerButton?.layer.cornerRadius = 8
             registerButton?.layer.masksToBounds = true
             registerButton?.setTitle("Register", for: .normal)
             registerButton?.setTitleColor(.white, for: .normal)
-            registerButton?.backgroundColor = .babyLavender
+            registerButton?.backgroundColor = .lavender
             registerButton?.titleLabel?.adjustsFontSizeToFitWidth = true
             registerButton?.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 25)
             registerButton?.addTarget(self, action: #selector(registerPressed(_:)), for: .touchUpInside)
