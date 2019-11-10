@@ -61,7 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             let register = UIButton(frame: .zero)
             register.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(register)
-            constrainOthers(this: register, toFirst: view, toSecond: view, toThird: login, width: 50.0/207.0, height: 55.0/876.0, left: 80, top: 30)
+            constrainOthers(this: register, toFirst: view, toSecond: view, toThird: login, width: 50.0/207.0, height: 55.0/876.0, left: 80, top: 150)
             self.registerButton = register
         }
         
@@ -107,11 +107,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             passwordText?.adjustsFontSizeToFitWidth = true
             passwordText?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
             passwordText?.delegate = self
+            loginButton?.layer.cornerRadius = 8
+            loginButton?.layer.masksToBounds = true
             loginButton?.setTitle("Login", for: .normal)
             loginButton?.setTitleColor(.white, for: .normal)
             loginButton?.backgroundColor = .babyLavender
             loginButton?.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 35)
             loginButton?.addTarget(self, action: #selector(loginPressed(_:)), for: .touchUpInside)
+            registerButton?.layer.cornerRadius = 8
+            registerButton?.layer.masksToBounds = true
             registerButton?.setTitle("Register", for: .normal)
             registerButton?.setTitleColor(.white, for: .normal)
             registerButton?.backgroundColor = .babyLavender
@@ -126,7 +130,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
 
             guard let email = emailText?.text , let password = passwordText?.text, email.count > 0, password.count > 0 else{
                 return
-            }
+        }
             
             Auth.auth().signIn(withEmail: email, password: password){ (user, error) in
                 if let signInError = error, user == nil{
@@ -171,6 +175,3 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                                          this.topAnchor.constraint(equalTo: toThird.bottomAnchor, constant: top)])
         }
     }
-
-
-

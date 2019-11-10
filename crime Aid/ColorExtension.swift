@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 extension UIColor{
-    static let lavendar = UIColor(displayP3Red: 217.0/255.0, green: 179.0/255.0, blue: 1, alpha: 1)
+    static let lavendar = UIColor(red: 217.0/255.0, green: 179.0/255.0, blue: 1.0, alpha: 1.0)
     static let babyLavender = UIColor(red: 217.0/255.0, green: 163.0/255.0, blue: 1.0, alpha: 1.0)
 }

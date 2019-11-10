@@ -18,11 +18,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
        weak var signUpText: UILabel?
        weak var registerButton: UIButton?
        weak var backGroundImage: UIImageView?
-       //var db : Firestore!
        
        override func viewDidLoad() {
            super.viewDidLoad()
-           //db = delegate.crimeLocationsDB
            setUpView()
        }
        
@@ -60,7 +58,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
            let register = UIButton(frame: .zero)
            register.translatesAutoresizingMaskIntoConstraints = false
            self.view.addSubview(register)
-           constrainOthers(this: register, toFirst: view, toSecond: signUpText, toThird: password, width: 50.0/207.0, height: 65.0/876.0, left: 45, top: 25)
+           constrainOthers(this: register, toFirst: view, toSecond: signUpText, toThird: password, width: 50.0/207.0, height: 65.0/876.0, left: 45, top: 85)
            registerButton = register
        }
        
@@ -102,6 +100,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
            passwordText?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
            passwordText?.isSecureTextEntry = true
            passwordText?.delegate = self
+        registerButton?.layer.cornerRadius = 8
+        registerButton?.layer.masksToBounds = true
            registerButton?.setTitle("Register", for: .normal)
            registerButton?.setTitleColor(.white, for: .normal)
            registerButton?.backgroundColor = .babyLavender
@@ -122,16 +122,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
                    self.present(failAlert, animated: true, completion: nil)
                    return
                }
-               // Add a new document with a generated ID
-//               var ref: DocumentReference? = nil
-//               self.db.collection("users").document(email).setData(["username": email]){ err in
-//                   if let err = err {
-//                       print("Error adding document: \(err)")
-//                   } else {
-//                       ref = self.db.collection("users").document(email)
-//                       print("Document added with ID: \(ref!.documentID)")
-//                   }
-//               }
                
                let login = HomeViewController()
                login.modalPresentationStyle = .fullScreen

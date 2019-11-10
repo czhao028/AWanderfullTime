@@ -24,6 +24,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     var resultText: UITextView?
     let filter = GMSAutocompleteFilter()
     var hours = -1
+    var selectPlacesButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,23 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         searchController?.searchResultsUpdater = resultViewController
         let subView = UIView(frame: CGRect(x: 0, y: 65.0, width: 350.0, height: 45.0))
 
+        //let margins = self.view.layoutMarginsGuide
+        selectPlacesButton = UIButton(frame: .zero)
+        selectPlacesButton.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(selectPlacesButton)
+        NSLayoutConstraint.activate([selectPlacesButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20),
+                                     selectPlacesButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 810),
+                                     selectPlacesButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 160),
+                                     selectPlacesButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -160)])
+
+        selectPlacesButton.backgroundColor = .lavendar
+        selectPlacesButton.layer.cornerRadius = 30
+        selectPlacesButton.layer.masksToBounds = true
+        selectPlacesButton.setTitle("+", for: .normal)
+        selectPlacesButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 35)
+        selectPlacesButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        selectPlacesButton.tintColor = .white
+        selectPlacesButton.addTarget(self, action: #selector(plusPressed(_:)), for: .touchUpInside)
         subView.addSubview((searchController?.searchBar)!)
         self.view.addSubview(subView)
         searchController?.searchBar.sizeToFit()
@@ -116,5 +134,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
        
        func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error) {
         print("Error: ", error.localizedDescription)
+    }
+    
+    @IBAction func plusPressed(_ sender: UIButton){
+        let topPlaces = TopPlacesViewController()
+        topPlaces.modalPresentationStyle = .overFullScreen
+        show(topPlaces, sender: self)
     }
 }

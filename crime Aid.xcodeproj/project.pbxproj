@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02C333BFEB0F1FA06D310EB6 /* Pods_crime_Aid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866F9BE7CEB4EFC6C556337E /* Pods_crime_Aid.framework */; };
+		E58A29F62377D9DA0078E2B2 /* TopPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58A29F52377D9DA0078E2B2 /* TopPlacesViewController.swift */; };
 		E5AF0A6F23771A2100D3B64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF0A6E23771A2100D3B64A /* AppDelegate.swift */; };
 		E5AF0A7123771A2100D3B64A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF0A7023771A2100D3B64A /* SceneDelegate.swift */; };
 		E5AF0A7323771A2100D3B64A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF0A7223771A2100D3B64A /* LoginViewController.swift */; };
@@ -25,6 +26,7 @@
 		0D6F4F30BB8D48EFCEBD979E /* Pods-crime Aid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crime Aid.release.xcconfig"; path = "Target Support Files/Pods-crime Aid/Pods-crime Aid.release.xcconfig"; sourceTree = "<group>"; };
 		866F9BE7CEB4EFC6C556337E /* Pods_crime_Aid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crime_Aid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C301AF98A4858D9293117DFF /* Pods-crime Aid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crime Aid.debug.xcconfig"; path = "Target Support Files/Pods-crime Aid/Pods-crime Aid.debug.xcconfig"; sourceTree = "<group>"; };
+		E58A29F52377D9DA0078E2B2 /* TopPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPlacesViewController.swift; sourceTree = "<group>"; };
 		E5AF0A6B23771A2100D3B64A /* crime Aid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crime Aid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AF0A6E23771A2100D3B64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5AF0A7023771A2100D3B64A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				E5E6231323775CE5002D74E8 /* GoogleService-Info.plist */,
 				E5AF0A7C23771A2300D3B64A /* Info.plist */,
 				E5E62318237761BC002D74E8 /* RegisterViewController.swift */,
+				E58A29F52377D9DA0078E2B2 /* TopPlacesViewController.swift */,
 			);
 			path = "crime Aid";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			files = (
 				E5AF0A7323771A2100D3B64A /* LoginViewController.swift in Sources */,
 				E5AF0A6F23771A2100D3B64A /* AppDelegate.swift in Sources */,
+				E58A29F62377D9DA0078E2B2 /* TopPlacesViewController.swift in Sources */,
 				E5E62319237761BC002D74E8 /* RegisterViewController.swift in Sources */,
 				E5E6231023775424002D74E8 /* TextUnderline.swift in Sources */,
 				E5AF0A7123771A2100D3B64A /* SceneDelegate.swift in Sources */,
