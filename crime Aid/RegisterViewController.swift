@@ -104,7 +104,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
         registerButton?.layer.masksToBounds = true
            registerButton?.setTitle("Register", for: .normal)
            registerButton?.setTitleColor(.white, for: .normal)
-           registerButton?.backgroundColor = .babyLavender
+           registerButton?.backgroundColor = .lavender
            registerButton?.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 33)
            registerButton?.addTarget(self, action: #selector(registerUser(_:)), for: .touchUpInside)
            registerButton?.titleLabel?.adjustsFontSizeToFitWidth = true
