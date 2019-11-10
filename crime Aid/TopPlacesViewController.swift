@@ -81,15 +81,7 @@ extension TopPlacesViewController: UITableViewDataSource {
         let indexcellLabel = places.firstIndex(of: (current?.textLabel!.text)!)!
         let coordinateTuple = coordinates[indexcellLabel]
         let transformed = CLLocationCoordinate2D(latitude: coordinateTuple.0, longitude: coordinateTuple.1)
-        let contains = selectedPlaces.contains { ($0.latitude == transformed.latitude) &&  }
-//        var contains = selectedPlaces.contains { element in
-//            if (transformed.latitude == element.latitude) && (transformed.longitude == element.longitude){
-//                return true
-//            }
-//            else{
-//                return false
-//            }
-        }
+        let contains = selectedPlaces.contains { ($0.latitude == transformed.latitude) && ($0.longitude == transformed.longitude) }
     
         if !contains{
             selectedPlaces.append(transformed)

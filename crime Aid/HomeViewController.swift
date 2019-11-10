@@ -13,6 +13,8 @@ import GoogleMaps
 import GooglePlaces
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, GMSAutocompleteResultsViewControllerDelegate {
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    var db : DatabaseReference!
     var topPlaces = TopPlacesViewController()
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
@@ -30,7 +32,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        db = delegate.LocationsDB
         if CLLocationManager.locationServicesEnabled(){
             locationManager = CLLocationManager()
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -86,8 +88,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         searchController?.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
         
-        drawPath()
-        //mapView.clear()
+        drawPath(with: pathCoordinates)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -147,9 +148,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         }
     }
     
-    func drawPath(){
-        for coordinates in pathCoordinates{
-            path.addLatitude(coordinates.0, longitude: coordinates.1)
+    func drawPath(with coordinates: [(CLLocationDegrees, CLLocationDegrees)]){
+        mapView.clear()
+        for coordinate in coordinates{
+            path.addLatitude(coordinate.0, longitude: coordinate.1)
         }
         let polyline = GMSPolyline(path: path)
         polyline.strokeColor = .lavender
