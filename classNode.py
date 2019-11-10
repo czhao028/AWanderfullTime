@@ -9,6 +9,12 @@ class Node:
         self.safety = 0
         self.children = []
         self.parent = None
+        self.h = -1 * float("inf")
+        self.g = -1 * float("inf")
+        self.f = -1 * float("inf")
+
+    def __eq__(self, other):
+        return self.stopID == other.stopID
 
     def set_safety(self, score):
         self.safety = score
